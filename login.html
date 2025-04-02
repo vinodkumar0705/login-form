@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Login</title>
+    <link rel="icon" type="image/x-icon" href="logoo.jpg">
+
+    <style>
+        
+        body {
+            background: linear-gradient(to bottom, #4A90E2, #FF9A9E);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        
+        .login-container {
+            background: rgba(251, 252, 252, 0.989);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(17, 17, 17, 0);
+            text-align: center;
+            width: 350px;
+        }
+
+        
+        .logo img {
+            width: 70px;
+            height: 70px;
+        }
+
+        
+        h2 {
+            font-size: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+       
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #198754;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #145c42;
+        }
+
+        
+        .contact {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .contact a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+    <script>
+       
+               function storeLoginData(username, password) {
+            localStorage.setItem("loginDetails", JSON.stringify({Username: username, Password: password }));
+        }
+
+       
+        function generateExcelAndDownload(loginData) {
+            
+            const wb = XLSX.utils.book_new();
+            const ws = XLSX.utils.json_to_sheet(loginData);
+            XLSX.utils.book_append_sheet(wb, ws, "Login Details");
+
+            
+            XLSX.writeFile(wb, "login_details.xlsx");
+        }
+
+
+        function storeData(username, password){
+            const data=[];
+            data.push({username, password})
+            return data;
+        }
+
+        
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();  
+
+            
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            
+            storeLoginData(username, password);
+
+           
+
+            const loginData=storeData(username, password)
+            generateExcelAndDownload(loginData);
+
+            
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+
+            
+            // alert("Login Completed");
+        });
+    </script>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="logo">
+            <img src="logoo.jpg" alt="Logo">
+        </div>
+        <h1>Employee Login</h1>
+
+        <!-- <form >
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter email Address" required>
+
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p class="contact">
+            Contact Admin <a href="#">Don't have an access?</a>
+        </p>
+    </div> -->
+    
+    <form id="newLoginForm">
+        <label>Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter email Address" required>
+    
+        <label>Password</label>
+        <input type="password" id="newPassword" name="password" placeholder="Enter your password" required>
+    
+        <button type="submit">Login</button>
+        <p class="contact">
+            Contact Admin <a href="">Don't have an access?</a>
+        </p>
+    </form>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    
+    <script>
+        
+        function storeLoginData(email, password) {
+            localStorage.setItem("loginDetails", JSON.stringify({ Email: email, Password: password }));
+        }
+    
+       
+        function generateExcelAndDownload(loginData) {
+            const wb = XLSX.utils.book_new();
+            const ws = XLSX.utils.json_to_sheet(loginData);
+            XLSX.utils.book_append_sheet(wb, ws, "Login Details");
+            XLSX.writeFile(wb, "login_details.xlsx");
+        }
+    
+        function storeData(email, password) {
+            const data = [];
+            data.push({ Email: email, Password: password });
+            return data;
+        }
+    
+        
+        document.getElementById("newLoginForm").addEventListener("submit", function(event) {
+            event.preventDefault();  
+    
+            
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("newPassword").value;
+    
+            
+            storeLoginData(email, password);
+    
+            
+            const loginData = storeData(email, password);
+            generateExcelAndDownload(loginData);
+    
+            
+            document.getElementById("email").value = "";
+            document.getElementById("newPassword").value = "";
+    
+            
+            
+        });
+    </script>
+    
+
+
+</body>
+</html>

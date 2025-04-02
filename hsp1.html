@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accentiqa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <style>
+   
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    width: 100;
+    background-image: url('bs.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #c6b3b3;
+    margin: 0px; 
+    padding: 0;
+}
+
+        
+        header {
+            display: flex;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            justify-content: space-between;
+            align-items: right;
+            padding: 10px;
+            background-color: transparent;
+        }
+        .logo {
+            font-size: 50px;
+            font-weight: bold;
+            color:black;
+
+        }
+        .navbar {
+    background-color: transparent; 
+    padding: 15px 0;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: rgb(239, 243, 246); 
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: white; 
+}
+        /* nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        } */
+        .top-button {
+            background: #121317;
+            color: rgb(207, 15, 15);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .hero {
+            /* display: flex; */
+            color: rgb(18, 21, 25);
+            /* align-items: center; */
+            /* justify-content:center; */
+            margin-left: 60%;
+            /* margin-right: ; */
+            height: 50;
+            font-size: large;
+            position: relative;
+            background-color: transparent;
+        }
+        .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 0%;
+    background-color: rgba(215, 26, 26, 0.7);;
+}
+
+        /* .content {
+            display:block;
+             */
+        
+        h1 {
+            font-size: 48 px;
+        }
+        .highlight {
+            color: #1e201e;
+            font-weight: bold;
+        }
+        aside {
+            float:right;
+        
+        }
+        input {
+            padding: 10px;
+            width: 250px;
+            margin-top: 20px;
+            border: bottom;
+            border-radius: 5px;
+        }
+        mark{
+            background-color: powderblue;
+        }
+        .cta {
+            display:bottom ;
+            background: rgba(239, 107, 6, 0.926);
+            color: rgb(15, 14, 14);
+            border: bottom;
+            padding: 15px 30px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 16px;
+        }
+        .platforms {
+            margin-top: 70px;
+            color: rgba(246, 246, 169, 0.016);
+            
+        }
+        .logos img {
+            margin: 10px;
+            width: 100px;
+        }
+        .footer{ display: flex;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            justify-content: space-between;
+            align-items: right;
+            padding: 20px;
+            background: rgba(23, 22, 22, 0.893);}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">ACCENTIQA<span class="arrow">↗</span></div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="https://www.accentiqa.com">Home</a></li>
+                 <li><a href="https://www.accentiqa.com/services" target="_blank">Services</a></li>
+                <li><a href="https://www.accentiqa.com/careers" target="_blank">careers</a></li>
+                <li><a href="https://www.accentiqa.com/about-us" target="_blank">About us</a></li>
+                <li><a href="login.html" target="_blank">Login</a></li>
+            </ul>
+        </nav>
+            </header>
+    <section class="hero">
+        
+       <div class="content">
+            <h1><mark>Join in Accentiqa for services</mark></h1>
+            <p><strong>On average we've helped businesses increase revenue by our Network.See what we can do for you.</strong></p>
+            <div><input type="text" placeholder="Company Name"></div>
+            <button class="cta">Free Website Checkup</button>
+        </div>
+        
+        <div class="platforms">
+            <p><strong> Grow with Accentiqa on Every Major Platform</p></strong></p>
+            <!-- <div class="logos">
+                <img src="Screenshot 2025-03-14 114503.png"alt="Volusion">
+                <img src="https://via.placeholder.com/100x50" alt="Shopify">
+                <img src="https://via.placeholder.com/100x50" alt="BigCommerce">
+                <img src="https://via.placeholder.com/100x50" alt="WooCommerce">
+            </div> -->
+        </div>
+    </section>
+    <footer>
+        
+            <a style="color:rgb(244, 246, 245)" href="http://www.accentiqa.com"; target=_blank>Visit Us </a>
+            <p></p>
+        </footer>
+</body>
+</html>
